@@ -66,7 +66,7 @@ def canada_timeline(data):
         data, 
         x='Year', 
         y='Probability', 
-        title='Probability of Being Born in Canada Over Time', 
+        title='Probability of Being Born in Canada (2010 to 2023)', 
         markers=True
     ) 
     fig.update_layout(
@@ -97,14 +97,19 @@ def country_timeline(data, order):
     plotly.graph_objs._figure.Figure
         A Plotly timeline object showing counrty timelines. 
     """
+
+    custom_colors = ["#1f77b4", "#ff7f0e","#2ca02c","#d62728","#9467bd",
+                     "#8c564b","#e377c2","#7f7f7f","#bcbd22","#17becf","#aec7e8"] # to avoid color repetition
+
     fig = px.line(data,
     x='Year',
     y='Probability',
     color='Country',
-    markers=True,
+    color_discrete_sequence=custom_colors,
     category_orders={'Country': order},  
-    title='Birth Probability Trends Over Time: Comparing Top 5, Bottom 5, and Canada', 
-    height=500
+    title='Birth Probability Trends: Comparing Top 5, Bottom 5, and Canada (2010 to 2023)', 
+    height=500, 
+    markers=True
     )
 
     fig.update_layout(

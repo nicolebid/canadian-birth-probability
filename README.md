@@ -1,4 +1,4 @@
-# The Probability of Being Born in Canada
+# Canadian Birth Probability Analysis
 
 By Nicole Bidwell
 

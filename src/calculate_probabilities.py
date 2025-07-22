@@ -52,7 +52,7 @@ def main():
     np.save(YR_2012_EX, yr_2012)
     np.save(YR_2012_RATIO, yr_2012_ratio)
 
-    #Calculate additional probabilites for each country (optional task)
+    # Calculate additional probabilites for each country (optional task)
     country_dict = {} # to store values 
 
     # Obtain probability of being born in each country for each year
