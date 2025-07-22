@@ -108,8 +108,7 @@ def country_timeline(data, order):
     )
 
     fig.update_layout(
-            yaxis=dict(
-                tickformat=',.2f',   
+            yaxis=dict( 
                 ticksuffix='%'       
         ),
         xaxis_title='Year',
@@ -148,7 +147,7 @@ def main():
     can_timeline.write_html(CANADA_TIME_HTML)
 
 
-    # 3. Timeline for top and bottom 5 countries 
+    # 3. Timeline for top 5, bottom 5, and Canada.
     # load data
     df_countries_prob = pd.read_csv(DATA_ALL_PROB_CSV)
 
@@ -168,19 +167,17 @@ def main():
 
     # Filter for selected countries
     df_selected = df_countries_prob[df_countries_prob['Country'].isin(selected_countries)]
-    
+   
     # Set ordering for timeline
     df_selected.loc[:, 'Country'] = pd.Categorical(df_selected['Country'], categories=selected_countries, ordered=True)
+
+    # adjust to percentage probabilities
+    df_selected.loc[:, 'Probability'] = df_selected['Probability']*100
   
     # Generate plot
     country_timelines = country_timeline(df_selected, selected_countries)
-
     country_timelines.write_image(COUNTRY_TIMELINE)
     country_timelines.write_html(COUNTRY_TIME_HTML)
-
-
-
-
     
 if __name__ == "__main__":
     main() 
