@@ -12,6 +12,7 @@ DATA_BIRTHS_CSV = os.path.join(ROOT_DIR, 'data/data_br_pop_births.csv')
 
 YR_2012_EX = os.path.join(ROOT_DIR, 'output/yr_2012.npy')
 YR_2012_RATIO = os.path.join(ROOT_DIR, 'output/yr_2012_ratio.npy')
+GLOBAL_AVG_BIRTHS = os.path.join(ROOT_DIR, 'output/global_avg_births.npy')
 
 CANADA_BARCHART = os.path.join(ROOT_DIR, 'output/canada_barchart.png')
 CANADA_TIMELINE = os.path.join(ROOT_DIR, 'output/canada_timeline.png')

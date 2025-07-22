@@ -52,7 +52,7 @@ def main():
     np.save(YR_2012_EX, yr_2012)
     np.save(YR_2012_RATIO, yr_2012_ratio)
 
-    # Calculate additional probabilites for each country (optional task)
+    #Calculate additional probabilites for each country (optional task)
     country_dict = {} # to store values 
 
     # Obtain probability of being born in each country for each year
@@ -83,6 +83,12 @@ def main():
 
     df_probs = pd.DataFrame(records)
     df_probs.to_csv(DATA_ALL_PROB_CSV, index=False) # save for later usage
+
+    # Calculate the Global Average of Births per year
+    df = pd.read_csv(DATA_BIRTHS_CSV)
+    total_births_per_yr = df.groupby('year')['births'].sum()
+    global_avg_births = total_births_per_yr.mean()
+    np.save(GLOBAL_AVG_BIRTHS, global_avg_births) 
 
 if __name__ == "__main__":
     main() 
