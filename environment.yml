@@ -1,12 +1,18 @@
-name: canadian-birth-probability
+name: canadian-birth-probabilities
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.12
-  - ipykernel
-  - pandas
-  - numpy
-  - matplotlib
-  - sqlite
-  - requests
+  - python=3.12.11
+  - ipykernel=6.29.5
+  - pandas=2.3.1
+  - numpy=2.3.1
+  - matplotlib=3.10.3
+  - sqlite=3.50.3
+  - requests=2.32.4
+  - nbconvert=7.16.6
+  - plotly=6.2.0
+  - pycountry=24.6.1
+  - pip=25.1.1
+  - pip:
+      - kaleido==1.0.0
