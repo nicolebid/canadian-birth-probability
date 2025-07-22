@@ -8,11 +8,11 @@ This analysis explores the likelihood of being born in Canada in a particular ye
 
 The analysis is implemented in a data pipeline, with all the scripts in the `src` folder. Steps to reproduce the analysis by running the data pipeline locally are outlined below.
 
-## 📄 Report 
+## Report 
 
 The interactive HTML version of the report can be viewed [here](https://nicolebid.github.io/canadian-birth-probability/canadian_birth_probability.html).
 
-## ⚙️ Reproducing the Analysis
+## Reproducing the Analysis
 
 This analysis can be run locally using a virtual environment. All required dependencies are listed in the [environment file](environment.yml). If you would like to set up the environment and run the pipeline to retrieve the data and obtain results in the `output` folder, follow the steps below.
 
