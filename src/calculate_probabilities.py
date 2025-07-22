@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np 
 import os 
-from .config import DATA_DB, DATA_CSV, YR_2012_EX, YR_2012_RATIO, DATA_ALL_PROB_CSV, DATA_BIRTHS_CSV
+from .config import *
 
 # This script defines the functions used to calculate the probabilities for a 
 # the specified country and year. 
@@ -9,14 +9,14 @@ from .config import DATA_DB, DATA_CSV, YR_2012_EX, YR_2012_RATIO, DATA_ALL_PROB_
 
 def calc_probability_country(data, yr=2010, country="Canada"):
     """
-    Calculates the percentage probability of births in a given country for the given year.
+    Calculates the percentage probability of being born in a given country for the given year.
 
     Parameters
     ----------
     data : pandas.DataFrame
         DataFrame (created from data/country_br_pop.csv)
     yr : int, optional
-        The year to calculate the probability for (default is 2010).
+        The year to calculate the probability for, must be between 2010 and 2023, inclusive (default is 2010).
     country: string
         The country to calculate the probability for (default is Canada). 
 
@@ -41,7 +41,7 @@ def main():
     # load data 
     df = pd.read_csv(DATA_CSV)
 
-    # Include the number of births by country in the dataframe 
+    # Determine number of births by country in the dataframe 
     df['births'] = df['birth_rate']*df['population']/1000
     df.to_csv(DATA_BIRTHS_CSV, index=False) # save for later usage
 
