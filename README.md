@@ -35,7 +35,7 @@ conda env create -f environment.yml
 ```
 conda activate canadian-birth-probabilities
 ```
-4. Run the scripts using the following commands (in order).
+4. Delete the files in the `data` and `output` folders and then run the following scripts, in order. 
 
 ```
 python -m src.retrieve_load
